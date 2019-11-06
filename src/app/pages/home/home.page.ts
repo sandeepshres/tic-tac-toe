@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RulesService } from '../providers/rules.service';
-import { Rules } from '../shared/rules';
+import { RulesService } from '../../providers/rules.service';
+import { Rules } from '../../shared/rules';
 import { Observable } from 'rxjs';
 
 @Component({
