@@ -1,3 +1,4 @@
 export interface Rules {
-    rule: string
+    id?: string,
+    name: string
 }
