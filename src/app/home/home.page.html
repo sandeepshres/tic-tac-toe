@@ -7,5 +7,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let rule of (rules | async)">
+      {{ rule.name }}
+    </ion-item>
+  </ion-list>
   <ion-button shape="round" (click)="goToGamePage()">Begin</ion-button>
 </ion-content>
