@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameboardComponent implements OnInit {
 
+  squares = Array(9).fill(null);
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
