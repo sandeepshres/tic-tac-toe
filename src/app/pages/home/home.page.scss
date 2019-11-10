@@ -1,6 +1,14 @@
-.btn-primary {
-    background-color: #4A8306;
-    color: white;
-    height: 20px;
-    width: 50px;
+
+.text-center {
+ text-align: center;
+}
+.text-style {
+   padding: 2px;
+   font-size: 14px;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
