@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { AngularFirestore } from '@angular/fire/firestore';
 import { HomePage } from './home.page';
 
 @NgModule({
@@ -11,6 +11,7 @@ import { HomePage } from './home.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    AngularFirestore,
     RouterModule.forChild([
       {
         path: '',
@@ -20,4 +21,4 @@ import { HomePage } from './home.page';
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Rules } from '../shared/rules';
@@ -27,15 +27,5 @@ export class RulesService {
 
   getRules(): Observable<Rules[]> {
     return this.rules;
-  }
-
-  getRule(id: string): Observable<Rules> {
-    return this.ruleCollection.doc<Rules>(id).valueChanges().pipe(
-      take(1),
-      map(rule => {
-        rule.id = id;
-        return rule;
-      })
-    );
   }
 }
