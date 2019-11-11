@@ -53,4 +53,37 @@ describe('GameboardComponent', () => {
     expect(component.winner).toBe(null);
     expect(component.squares.every((square) => square == null)).toBe(true);
   });
+
+  it('should not allow to play a move after a winner is declared', () => {
+    component.winner = 'X';
+    component.handleMove(0);
+    expect(component.squares[0]).toBe(null);
+  });
+
+  it('should know if a top row is winner', () => {
+     component.squares = ['X', null, 'X', 
+                           null, null, null,
+                           null, null, null];
+     component.player = 'X';
+     component.handleMove(1);
+     expect(component.winner).toBe('X');
+  });
+
+  it('should know if first column is winner' , () => {
+    component.squares = ['X', null, null, 
+                         'X', null, null,
+                         null, null, null];
+    component.player = 'X';
+    component.handleMove(6);
+    expect(component.winner).toBe('X');
+  });
+
+  it('should know if a diagonal is winner' , () => {
+    component.squares = ['X', null, null, 
+                         null, null, null,
+                         null, null, 'X'];
+    component.player = 'X';
+    component.handleMove(4);
+    expect(component.winner).toBe('X');
+  });
 });

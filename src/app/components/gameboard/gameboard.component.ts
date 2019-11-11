@@ -19,7 +19,7 @@ export class GameboardComponent implements OnInit {
   }
 
   handleMove(position: number) {
-    if (!this.winningMove() && !this.squares[position]) {
+    if (!this.winner && !this.squares[position]) {
       this.squares[position] = this.player;
       if (this.winningMove()) {
         this.winner = this.player;
