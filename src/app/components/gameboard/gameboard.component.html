@@ -1,3 +1,8 @@
+<div class="text-winner">
+  <div *ngIf="winner">
+    Player {{ winner }} won the game!
+  </div>
+</div>
 <ion-grid>
   <div class="container">
     <ion-row *ngFor="let row of [0,1,2]">
@@ -7,3 +12,10 @@
     </ion-row>
   </div>
 </ion-grid>
+<ion-footer>
+  <ion-toolbar color="shipt-light">
+    <ion-button color="shipt-primary" expand="block" (click)="newGame()">
+      New Game
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

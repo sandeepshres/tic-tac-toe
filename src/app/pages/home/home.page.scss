@@ -1,10 +1,15 @@
 
 .text-center {
  text-align: center;
+ font-size: 18px;
+ font-weight: bold;
+ color: var(--ion-color-shipt-secondary);
 }
 .text-style {
    padding: 2px;
    font-size: 14px;
+   font-weight: bold;
+   color: var(--ion-color-shipt-secondary);
 }
 .container {
     display: flex;

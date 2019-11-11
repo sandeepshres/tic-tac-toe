@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gameboard',
@@ -7,38 +7,50 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class GameboardComponent implements OnInit {
 
-  @Input() squares: Array<string>;
-  @Input() player: string;
-  @Input() winner: string;
+  player: string;
+  winner: string;
+  squares: string[];
+  @Output() playerEvent = new EventEmitter<string>();
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.newGame();
+  }
 
-  handleMove(position) {
-    if (!this.winner && !this.squares[position]) {
+  handleMove(position: number) {
+    if (!this.winningMove() && !this.squares[position]) {
       this.squares[position] = this.player;
-      if (this.winnigMove()) {
+      if (this.winningMove()) {
         this.winner = this.player;
-      } else if (!this.winnigMove()) {
       }
-      this.player = this.player === 'X' ? 'O' : 'X';
+      this.player = (this.player === 'X') ? 'O' : 'X';
+      this.playerEvent.emit(this.player);
     }
   }
 
-  winnigMove() {
+  winningMove() {
     const conditions = [
       [0, 1, 2], [3, 4, 5], [6, 7, 8],
       [0, 3, 6], [1, 4, 7], [2, 5, 8],
       [0, 4, 8], [2, 4, 6]
     ];
-    for (let condition of conditions) {
-      if (this.squares[condition[0]] && this.squares[condition[0]] === this.squares[condition[1]]
-        && this.squares[condition[1]] === this.squares[condition[2]]) {
+    for (const condition of conditions) {
+      if (
+        this.squares[condition[0]] &&
+        this.squares[condition[0]] === this.squares[condition[1]] &&
+        this.squares[condition[1]] === this.squares[condition[2]]
+      ) {
         return true;
       }
     }
     return false;
   }
 
+  newGame() {
+    this.squares = Array(9).fill(null);
+    this.player = 'X';
+    this.winner = null;
+    this.playerEvent.emit(this.player);
+  }
 }

@@ -1,17 +1,10 @@
 <ion-header>
   <ion-toolbar color="shipt-secondary">
-    <ion-title>game</ion-title>
+    <ion-title>Tic Tac Toe</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <app-gameboard [squares]="squares" [player]="player" [winner]="winner"></app-gameboard>
+  <div class="text-player">Current Player: {{ player }} </div>
+  <app-gameboard (playerEvent)="receivePlayer($event)"></app-gameboard>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar color="shipt-light">
-    <ion-button color="shipt-primary" expand="block" (click)="restartGame()">
-      New Game
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>

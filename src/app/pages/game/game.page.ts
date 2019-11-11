@@ -1,24 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { GameboardComponent } from '../../components/gameboard/gameboard.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.page.html',
   styleUrls: ['./game.page.scss'],
 })
-export class GamePage implements OnInit {
-  squares = Array(9).fill(null);
+export class GamePage {
+
   player = 'X';
-  winner = null;
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  restartGame() {
-    this.squares = Array(9).fill(null);
-    this.player = 'X';
-    this.winner = null;
+  receivePlayer($event) {
+    this.player = $event;
   }
 }

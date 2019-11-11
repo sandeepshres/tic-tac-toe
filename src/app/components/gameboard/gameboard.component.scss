@@ -6,6 +6,14 @@
     height: 100px;
     box-sizing: border-box;
     border: 2px solid #4A8306;
-    font-size: 10px;
+    font-size: 4.5em !important;
     text-align: center;
+    color: var(--ion-color-shipt-secondary);
+  }
+  .text-winner {
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    color: var(--ion-color-shipt-secondary);
   }

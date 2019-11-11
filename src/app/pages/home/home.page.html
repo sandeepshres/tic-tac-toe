@@ -9,13 +9,13 @@
 <ion-content>
   <div class="container">
     <div>
-      <h6 class="text-center">Game Info</h6>
+      <div class="text-center">Game Info</div>
       <ul>
         <li class="text-style" *ngFor="let rule of (rules | async)">
           {{ rule.name }}
         </li>
       </ul>
-      <ion-button color="shipt-primary" expand="block" (click)="goToGamePage()">Begin</ion-button>
+      <ion-button color="shipt-primary" expand="block" (click)="goToGamePage()">Start</ion-button>
     </div>
   </div>
 </ion-content>
