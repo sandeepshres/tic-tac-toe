@@ -5,6 +5,10 @@ Tic Tac Toe is a two player game where each player takes turn to mark X and O on
 ## Demo
 ![tic-tac-toe demo](tic-tac-toe.gif)
 
+## Description
+
+I have used Ionic 4 with Angular 8 to develop this project. For consistent User Experience I have used Ionic UI components library and customized it to include color combinations that we can see in Shipt's mobile apps. Game rules which are displayed in homepage comes from Firebase database. Gameboard component is reusable and can be imported to any page. 
+
 ## Prerequisites
 * Node.js >=10
 * NPM >= 6
@@ -33,7 +37,7 @@ Build the app
 ng build
 ```
 
-Start the app
+Serve the app
 ```bash
 ionic serve --lab
 ```
@@ -47,11 +51,6 @@ ionic serve --lab
 * Allows the players to take turns marking spaces on the 3*3 grid
 * Declares the player as winner
 * Allows the user to start a new game
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## Author
 * Sandeep Shrestha

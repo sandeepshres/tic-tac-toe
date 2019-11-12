@@ -61,37 +61,37 @@ describe('GameboardComponent', () => {
   });
 
   it('should know if a top row is winner', () => {
-     component.squares = ['X', null, 'X', 
-                           null, null, null,
-                           null, null, null];
-     component.player = 'X';
-     component.handleMove(1);
-     expect(component.winner).toBe('X');
+    component.squares = ['X', null, 'X',
+      null, null, null,
+      null, null, null];
+    component.player = 'X';
+    component.handleMove(1);
+    expect(component.winner).toBe('X');
   });
 
   it('should know if first column is winner', () => {
-    component.squares = ['X', null, null, 
-                         'X', null, null,
-                         null, null, null];
+    component.squares = ['X', null, null,
+      'X', null, null,
+      null, null, null];
     component.player = 'X';
     component.handleMove(6);
     expect(component.winner).toBe('X');
   });
 
   it('should know if a diagonal is winner', () => {
-    component.squares = ['X', null, null, 
-                         null, null, null,
-                         null, null, 'X'];
+    component.squares = ['X', null, null,
+      null, null, null,
+      null, null, 'X'];
     component.player = 'X';
     component.handleMove(4);
     expect(component.winner).toBe('X');
   });
 
   it('should know if a row with both X and O values is not a winner', () => {
-    component.squares = ['X', null, null, 
-                          null, null, null,
-                          null, null, 'X'];
-    component.player ='O';
+    component.squares = ['X', null, null,
+      null, null, null,
+      null, null, 'X'];
+    component.player = 'O';
     component.handleMove(4);
     expect(component.winner).toBe(null);
   });
