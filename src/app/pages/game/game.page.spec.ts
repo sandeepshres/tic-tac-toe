@@ -24,4 +24,9 @@ describe('GamePage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have an initial value of player as X and winner as null', () => {
+    expect(component.player).toBe('X');
+    expect(component.winner).toBe(null);
+  });
 });
