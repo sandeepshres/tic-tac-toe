@@ -3,6 +3,7 @@
 Tic Tac Toe is a two player game where each player takes turn to mark X and O on a 3*3 grid. The player who succeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
 ## Demo
+![tic-tac-toe demo](tic-tac-toe.gif)
 
 ## Prerequisites
 * Node.js >=10
