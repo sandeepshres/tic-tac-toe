@@ -11,6 +11,7 @@ export class GameboardComponent implements OnInit {
   winner: string;
   squares: string[];
   @Output() playerEvent = new EventEmitter<string>();
+  @Output() winnerEvent = new EventEmitter<string>();
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class GameboardComponent implements OnInit {
       }
       this.player = (this.player === 'X') ? 'O' : 'X';
       this.playerEvent.emit(this.player);
+      this.winnerEvent.emit(this.winner);
     }
   }
 
@@ -52,5 +54,6 @@ export class GameboardComponent implements OnInit {
     this.player = 'X';
     this.winner = null;
     this.playerEvent.emit(this.player);
+    this.winnerEvent.emit(this.winner);
   }
 }

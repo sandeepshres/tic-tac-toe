@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <div class="text-player">Current Player: {{ player }} </div>
-  <app-gameboard (playerEvent)="receivePlayer($event)"></app-gameboard>
+  <div class="text-container">
+    Current Player: {{ player }}
+    <div *ngIf="winner">
+      Player {{ winner }} won the game!
+    </div>
+  </div>
+  <app-gameboard (playerEvent)="receivePlayer($event)" (winnerEvent)="receiveWinner($event)"></app-gameboard>
 </ion-content>
