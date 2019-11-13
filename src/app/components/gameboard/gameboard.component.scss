@@ -1,11 +1,11 @@
  .container {
-    border: 2px solid #4A8306;
+    border: 2px solid var(--ion-color-shipt-primary);
  }
  .cell {
     width: 100px;
     height: 100px;
     box-sizing: border-box;
-    border: 2px solid #4A8306;
+    border: 2px solid var(--ion-color-shipt-primary);
     font-size: 4.5em !important;
     text-align: center;
     color: var(--ion-color-shipt-secondary);
