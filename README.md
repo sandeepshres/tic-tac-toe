@@ -24,6 +24,7 @@ cd tic-tac-toe
 
 Install project dependencies
 ```bash
+npm install -g ionic
 npm install
 ```
 
